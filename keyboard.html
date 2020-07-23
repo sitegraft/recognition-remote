@@ -1,0 +1,358 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Recognition Remote</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <meta name="description" content="Control your PC with gesture recognition">
+    <meta name="author" content="SiteGraft">
+    <link rel="stylesheet" href="./fontawesome-free-5.13.0-web/css/all.min.css">
+    <link rel="stylesheet" href="./open-css-components.min.css">
+</head>
+
+<body style="background-color:hsl(217, 89%, 61%);">
+    <!--
+    <div id="close" onclick="closeWindow()" style="background-color: red;cursor:pointer;color:white;width:fit-content;margin:5px;border:solid;border-color:transparent;border-radius: 10%;margin-bottom: 5px;" class="menu-item">
+        <i style="font-size: large;color:white;margin:auto;padding:4px;" class="fa fa-times"></i>
+    </div>
+    -->
+    <div style="-webkit-app-region: drag;" class="toolbar toolbar--material">
+        <div class="toolbar__center toolbar--material__center">
+            Recognition Remote - <small>Control your cursor with your mouse</small>
+        </div>
+        <div>
+            <i onclick="closeWindow()"
+                style="-webkit-app-region: no-drag;color:red;position: absolute; right:5px;top:5px;font-size: 40px;"
+                class="fa fa-window-close" aria-hidden="true"></i>
+        </div>
+    </div>
+    <div style="height:75%;margin-top: 10px;">
+        <div class="keyboard">
+            
+            <div class="keyboard__row">
+                <div onclick="execKey('escape')" class="key--double key" data-key="192">
+                    <div>esc</div>
+                </div>
+                <div onclick="execKey('1')" class="key--double key" data-key="49">
+                    <div>1</div>
+                </div>
+                <div onclick="execKey('2')" class="key--double key" data-key="50">
+                    <div>2</div>
+                </div>
+                <div onclick="execKey('3')" class="key--double key" data-key="51">
+                    <div>3</div>
+                </div>
+                <div onclick="execKey('4')" class="key--double key" data-key="52">
+                    <div>4</div>
+                </div>
+                <div onclick="execKey('5')" class="key--double key" data-key="53">
+                    <div>5</div>
+                </div>
+                <div onclick="execKey('6')" class="key--double key" data-key="54">
+                    <div>6</div>
+                </div>
+                <div onclick="execKey('7')" class="key--double key" data-key="55">
+                    <div>7</div>
+                </div>
+                <div onclick="execKey('8')" class="key--double key" data-key="56">
+                    <div>8</div>
+                </div>
+                <div onclick="execKey('9')" class="key--double key" data-key="57">
+                    <div>9</div>
+                </div>
+                <div onclick="execKey('0')" class="key--double key" data-key="48">
+                    <div>0</div>
+                </div>
+                <div onclick="execKey('-')" class="key--double key" data-key="189">
+                    <div>-</div>
+                </div>
+                <div onclick="execKey('=')" class="key--double key" data-key="187">
+                    <div>=</div>
+                </div>
+                <div onclick="execKey('backspace')" class="key--bottom-right key--word key--w4 key" data-key="8">
+                    <span>backspace</span>
+                </div>
+            </div>
+            <div class="keyboard__row">
+                <div onclick="execKey('tab')" class="key--bottom-left key--word key--w4 key" data-key="9">
+                    <span>tab</span>
+                </div>
+                <div onclick="execKey('q')" class="key--letter key" data-char="Q">Q</div>
+                <div onclick="execKey('w')" class="key--letter key" data-char="W">W</div>
+                <div onclick="execKey('e')" class="key--letter key" data-char="E">E</div>
+                <div onclick="execKey('r')" class="key--letter key" data-char="R">R</div>
+                <div onclick="execKey('t')" class="key--letter key" data-char="T">T</div>
+                <div onclick="execKey('y')" class="key--letter key" data-char="Y">Y</div>
+                <div onclick="execKey('u')" class="key--letter key" data-char="U">U</div>
+                <div onclick="execKey('i')" class="key--letter key" data-char="I">I</div>
+                <div onclick="execKey('o')" class="key--letter key" data-char="O">O</div>
+                <div onclick="execKey('p')" class="key--letter key" data-char="P">P</div>
+                <div onclick="execKey('[')" class="key--double key" data-key="219" data-char="{[">
+                    <div>[</div>
+                </div>
+                <div onclick="execKey(']')" class="key--double key" data-key="221" data-char="}]">
+                    <div>]</div>
+                </div>
+                <div onclick="execKey('numpad_/')" class="key--double key" data-key="220" data-char="|\">
+                    <div>\</div>
+                </div>
+            </div>
+            <div class="keyboard__row">
+                <div onclick="execKey('capslock')" class="key--bottom-left key--word key--w5 key" data-key="20">
+                    <span>caps lock</span>
+                </div>
+                <div onclick="execKey('a')" class="key--letter key" data-char="A">A</div>
+                <div onclick="execKey('s')" class="key--letter key" data-char="S">S</div>
+                <div onclick="execKey('d')" class="key--letter key" data-char="D">D</div>
+                <div onclick="execKey('f')" class="key--letter key" data-char="F">F</div>
+                <div onclick="execKey('g')" class="key--letter key" data-char="G">G</div>
+                <div onclick="execKey('h')" class="key--letter key" data-char="H">H</div>
+                <div onclick="execKey('j')" class="key--letter key" data-char="J">J</div>
+                <div onclick="execKey('k')" class="key--letter key" data-char="K">K</div>
+                <div onclick="execKey('l')" class="key--letter key" data-char="L">L</div>
+                <div onclick="execKey(':')" class="key--double key" data-key="186">
+                    <div>:</div>
+                </div>
+                <div onclick='execKey("\"")' class="key--double key" data-key="222">
+                    <div>"</div>
+                </div>
+                <div onclick="execKey('enter')" class="key--bottom-right key--word key--w5 key" data-key="13">
+                    <span>enter</span>
+                </div>
+            </div>
+            <div class="keyboard__row">
+                <div onclick="execKey('shift')" class="key--bottom-left key--word key--w6 key" data-key="16">
+                    <span>shift</span>
+                </div>
+                <div onclick="execKey('z')" class="key--letter key" data-char="Z">Z</div>
+                <div onclick="execKey('x')" class="key--letter key" data-char="X">X</div>
+                <div onclick="execKey('c')" class="key--letter key" data-char="C">C</div>
+                <div onclick="execKey('v')" class="key--letter key" data-char="V">V</div>
+                <div onclick="execKey('b')" class="key--letter key" data-char="B">B</div>
+                <div onclick="execKey('n')" class="key--letter key" data-char="N">N</div>
+                <div onclick="execKey('m')" class="key--letter key" data-char="M">M</div>
+                <div onclick="execKey('numpad_*')" class="key--double key" data-key="188">
+                    <div>*</div>
+                </div>
+                <div onclick="execKey('numpad_.')" class="key--double key" data-key="190">
+                    <div>.</div>
+                </div>
+                <div onclick="execKey('?')" class="key--double key" data-key="191">
+                    <div>?</div>
+                </div>
+                <div onclick="execKey('right_shift')" class="key--bottom-right key--word key--w6 key" data-key="16-R">
+                    <span>shift</span>
+                </div>
+            </div>
+            <div class="keyboard__row keyboard__row--h3">
+                <div onclick="execKey('fn')" class="key--bottom-left key--word key">
+                    <span>fn</span>
+                </div>
+                <div onclick="execKey('control')" class="key--bottom-left key--word key--w1 key" data-key="17">
+                    <span>control</span>
+                </div>
+                <div onclick="execKey('alt')" class="key--bottom-left key--word key--w1 key" data-key="18">
+                    <span>alt</span>
+                </div>
+                <div onclick="execKey('command')" class="key--bottom-right key--word key--w3 key" data-key="91">
+                    <span>command</span>
+                </div>
+                <div onclick="execKey('space')" class="key--double key--right key--space key" data-key="32" data-char=" ">
+                    &nbsp;
+                </div>
+                <div onclick="execKey('command')" class="key--bottom-left key--word key--w3 key" data-key="93-R">
+                    <span>command</span>
+                </div>
+                <div onclick="execKey('right_alt')" class="key--bottom-left key--word key--w1 key" data-key="18-R">
+                    <span>alt</span>
+                </div>
+                <div onclick="execKey('left')" data-key="37" class="key--arrow key">
+                    <span>&#9664;</span>
+                </div>
+                <div class="key--double key--arrow--tall" data-key="38">
+                    <div onclick="execKey('up')" class="key">&#9650;</div>
+                    <div onclick="execKey('down')" class="key">&#9660;</div>
+                </div>
+                <div onclick="execKey('right')" data-key="39" class="key--arrow key">
+                    <span>&#9654;</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        h1 {
+            text-align: center;
+            font-size: 1.8em;
+            font-family: monospace;
+            padding: 0.7em;
+        }
+
+        .keyboard {
+            text-align: center;
+            font-size: 14px;
+            font-family: sans-serif;
+        }
+
+        .keyboard__row {
+            display: inline-block;
+            height: 3em;
+            margin: 0.2em;
+        }
+
+        .keyboard__row--h1 {
+            height: 1.7em;
+            line-height: 1.4em;
+        }
+
+        .keyboard__row--h3 {
+            height: 3.3em;
+        }
+
+        .keyboard__row>* {
+            position: relative;
+            background: #333;
+            text-align: center;
+            color: #eee;
+            float: left;
+            border-radius: 0.3em;
+            margin: 0.2em;
+            padding: 0.2em;
+            width: 3.3em;
+            height: 100%;
+            box-sizing: border-box;
+            cursor: pointer;
+            -webkit-user-select: none;
+            border: 1px solid #444;
+            box-shadow: 0 0.2em 0 0.05em #222;
+            border-bottom-color: #555;
+        }
+
+        .keyboard__row--h1>div {
+            width: 3.5em;
+        }
+
+        .keyboard__row>div[data-pressed],
+        .keyboard__row>div:active {
+            background: #2a2a2a;
+            color: #aaa;
+            position: relative;
+            top: 0.2em;
+            box-shadow: 0 0 0 0.05em black;
+        }
+
+        .key--w3 {
+            width: 4.6em;
+        }
+
+        .key--w4 {
+            width: 6em;
+        }
+
+        .key--w5 {
+            width: 6.5em;
+        }
+
+        .key--w6 {
+            width: 8.3em;
+        }
+
+        .key--space {
+            width: 18em;
+        }
+
+        .key--double>* {
+            padding-top: 0.1em;
+        }
+
+        .key--letter {
+            line-height: 2.8em;
+        }
+
+        .key--bottom-left>* {
+            position: absolute;
+            text-align: left;
+            bottom: 0.4em;
+            left: 0.4em;
+        }
+
+        .key--bottom-right>* {
+            position: absolute;
+            text-align: right;
+            bottom: 0.4em;
+            right: 0.4em;
+        }
+
+        .key--fn>* {
+            font-size: 0.6em;
+            line-height: 1em;
+            padding-top: 1.2em;
+            padding-right: 0.2em;
+            text-align: right;
+            float: right;
+        }
+
+        .key--word>* {
+            font-size: 0.8em;
+        }
+
+        .key--arrow--tall>*,
+        .key--arrow>* {
+            font-size: 0.5em;
+            line-height: 3em;
+        }
+
+        .key--arrow {
+            height: 1.8em;
+            margin-top: 1.7em;
+            line-height: 0.5em;
+        }
+
+        .key--arrow--tall>* {
+            padding-top: 0.2em;
+        }
+
+        .keyboard>.keyboard__row {
+            text-align: center;
+        }
+
+        :checked+.switch__toggle {
+            box-shadow: inset 0 0 0 2px #ffffff;
+            background-color: rgb(249, 104, 84);
+        }
+
+        /* width */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        video {
+            transform: rotateY(180deg);
+            -webkit-transform: rotateY(180deg);
+            /* Safari and Chrome */
+            -moz-transform: rotateY(180deg);
+            /* Firefox */
+        }
+    </style>
+    <script src="./controls.js"></script>
+</body>
+
+</html>

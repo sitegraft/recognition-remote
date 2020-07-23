@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Recognition Remote</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <meta name="description" content="Control your PC with gesture recognition">
+    <meta name="author" content="SiteGraft">
+    <link rel="stylesheet" href="./fontawesome-free-5.13.0-web/css/all.min.css">
+    <link rel="stylesheet" href="./newcss.css">
+</head>
+<style>
+    #circularMenu1 {
+        top: 20px;
+        left: 20px;
+    }
+</style>
+
+<body>
+
+    <div id="circularMenu1" class="circular-menu circular-menu-left active">
+
+        <img id="loading" src="./loading.gif" style="position: absolute;margin-left: -20px;margin-top: -22.5px;width: 100px;height: 100px;transform: rotate(-90deg);">
+        <p id="loading1" style="position: absolute;color: white;margin-left: 40px;font-size: 76%;margin-top: 5.5px;width: 87px;font-style: monos;font-family: monospace;transform: rotate(-90deg);">Loading webcam recognition...</p>    
+        <p class="warning" id="shoulder" style="z-index:100;display:none;position: absolute;color: red;margin-left: 40px;font-size: 76%;margin-top: 5.5px;width: 87px;font-style: monos;font-family: monospace;transform: rotate(-90deg);">Right shoulder not detected.</p>    
+        <p class="warning" id="wrist" style="z-index:100;display:none;position: absolute;color: red;margin-left: 62px;font-size: 76%;margin-top: 5.5px;width: 87px;font-style: monos;font-family: monospace;transform: rotate(-90deg);">Right wrist not detected.</p>    
+        <div id="camdemo" style="width:120px;height:60px;position: absolute;transform: rotate(-90deg);color:black;margin-left: -52px;margin-top: -14px;pointer-events: none;font-size: 65%;touch-action:none;" class="card__content card--material__content">
+        </div>
+        <a id="start" class="floating-btn"
+            onclick="document.getElementById('circularMenu1').classList.toggle('active');">
+            <i style="transform: rotate(-90deg);" class="fas fa-power-off"></i>
+        </a>
+
+        <menu class="items-wrapper">
+            <div id="minimize" onclick="minimizeWindow()" style="background-color: #FFBD44;cursor:pointer;" class="menu-item">
+                <i style="transform: rotate(-90deg);display: block;margin-top: 15px;margin-left: -5px;" class="fa fa-window-minimize"></i>
+            </div>
+            <div id="keyboardBut" style="background-color: deepskyblue;cursor:pointer;" class="menu-item">
+                <i style="transform: rotate(-90deg);" class="far fa-keyboard"></i>
+            </div>
+            <div id="patreonButton" style="background-color: #f96854;cursor:pointer;" class="menu-item">
+                <i style="transform: rotate(-90deg);" class="fab fa-patreon"></i>
+            </div>
+            <div id="close" onclick="closeWindow()" style="background-color: red;cursor:pointer;" class="menu-item">
+                <i style="transform: rotate(-90deg);" class="fa fa-times"></i>
+            </div>
+        </menu>
+
+        <div id="showDiv"
+            style="position: absolute;width: 160px;right: -13px;bottom: 65px;font-family: monospace;font-size: 80%;transform: rotate(-90deg);color: white;">
+            <input style="margin-left:-12px;" type="checkbox" id="showVideo" name="showVideo">
+            <label style="float: right;margin-right: 93px;margin-top: 4px;" for="showVideo"> Show video</label>
+        </div>
+        <p class="copyright" style="z-index:100;position: absolute;color: white;margin-left: -58px;font-size: 55%;margin-top: -115.5px;width: 87px;font-style: monos;font-family: monospace;transform: rotate(-90deg);">sitegraft.dev@gmail.com</p>    
+
+    </div>
+
+    <script src="./controls.js"></script>
+</body>
+
+</html>

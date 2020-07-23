@@ -1,0 +1,31 @@
+{
+  "name": "recognitionremote",
+  "version": "1.0.0",
+  "description": "Control your PC with webcam gestures.",
+  "main": "index.js",
+  "icon":"build/icon.ico",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Dennis Khelvaly",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^9.0.4",
+    "electron-packager": "^14.2.1"
+  },
+  "build": {
+    "files": [
+      "build/*"
+    ],
+    "appID": "recognitionremote",
+    "productName": "Recognition Remote",
+    "icon": "build/icon.ico"
+  },
+  "dependencies": {
+    "@tensorflow-models/posenet": "^2.2.1",
+    "@tensorflow/tfjs": "^2.0.1",
+    "express": "^4.17.1",
+    "robotjs": "^0.6.0",
+    "webcamjs": "^1.0.26"
+  }
+}
