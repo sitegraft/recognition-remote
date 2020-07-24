@@ -13,14 +13,6 @@
     "electron": "^9.0.4",
     "electron-packager": "^14.2.1"
   },
-  "build": {
-    "files": [
-      "build/*"
-    ],
-    "appID": "recognitionremote",
-    "productName": "Recognition Remote",
-    "icon": "build/icon.ico"
-  },
   "dependencies": {
     "@tensorflow-models/posenet": "^2.2.1",
     "@tensorflow/tfjs": "^2.0.1",
